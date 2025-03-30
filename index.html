@@ -465,21 +465,10 @@ a:hover { text-decoration: underline; }
 
 <div class="indicator">x 45</div>
 <div class="sign">
-<div class="indicator" id="score">x 0</div>
-<div class="sign"></div>
 </div>
 
 <script>
-    let score = 0;
-    function addScore() {
-    score += 10;
-    document.getElementById("score").textContent = "x " + score;
-    function playAgain() {
-    score = 0;
-    document.getElementById("score").textContent = "x " + score;
-    document.querySelector('.end-message').classList.add('d-none');
-    }
-    }
+    
     function init() {  
 
   const elements = {
