@@ -877,6 +877,37 @@ document.addEventListener('click', e => {
     handleWalk();
 });
 
+   let score = 0;
+
+function addScore() {
+    score += 10;
+    document.getElementById("score").textContent = "x " + score;
+}
+
+function playAgain() {
+    score = 0;
+    document.getElementById("score").textContent = "x " + score;
+    document.querySelector('.end-message').classList.add('d-none');
+}
+
+function init() {  
+    return {
+        wrapper: document.querySelector('.wrapper'),
+        mapCover: document.querySelector('.map-cover'), 
+        indicator: document.querySelector('.indicator'),
+        player: document.querySelector('.player'), 
+        bunnyRadar: document.querySelector('.circle'),
+        endMessage: document.querySelector('.end-message'),
+        button: document.querySelector('button')
+    };
+}
+
+// Вызываем init() и сохраняем элементы
+const elements = init();
+
+// Привязываем кнопку к функции playAgain()
+elements.button.addEventListener('click', playAgain);
+ 
 </script>
 </body>
 </html>
