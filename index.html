@@ -215,6 +215,7 @@ button:hover {
   image-rendering: pixelated;
 }
 
+  
 .hug-bear-bunny .bunny::after {
   background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAZdJREFUWEfFl8FNBDEMRScHzuyBIqABWgEhrWgARDHQAJygFCqAHrhAAYjVX+kjj9eOE2dGO5edTTLxG9vfzpTpyFc5sv1pGODq/PQPL/H2+TPbyxvXLzwEACOvH9/7Pa8vNv8Q3rjl7TSANCI3BgihOC7hFvPAqgCMH2l1fDku18lQDHkAmz49P848dXd7byaZXIc1MDwcAgsANDAgLwtyVYCoXizmARjyvOBB0HgN0lOCKcNeAIZIJ58GsiAOADLGaSjyRAoAmzLh5L00innOnV1uZ0qQqkgBSAXozNcQ+A8Almb8yrCkAWQsI48QwErIRQAijwwDZGSIZ35PNtPDzfagEUUNye2GkRp0ZdTx1h3S6yfVdvz1/rI/bLRengxLKa6dtAd6qmLqPBCFQEqQ914l7AZoMc4ciMpvKglbAGTRsWp+SxHCmqFmZCnBU8Pq3bBWgFiaLSl2q8BrSN5pqGbcDYFXDXk21DlSOw2lASyIDEBNglUP1AA4x+xHbHlE7zmShwCWoagst35TcJ/0p1kE0jq/A+eTbjBgLTdgAAAAAElFTkSuQmCC);
   animation: hug-bear-bunny forwards 1.8s;
@@ -479,6 +480,8 @@ a:hover { text-decoration: underline; }
 <div class="indicator">x 45</div>
     <div class="score">Score: 0</div>
 
+  
+  
 <div class="sign">
 </div>
 
@@ -489,7 +492,9 @@ a:hover { text-decoration: underline; }
 function updateScore(amount) {
   score += amount;
   elements.score.textContent = `Score: ${score}`;
+  
 }
+   
         
   const elements = {
     wrapper: document.querySelector('.wrapper'),
@@ -537,6 +542,7 @@ function updateScore(amount) {
       x: 0, y: 0,
     },
     elements: [],
+    score: document.querySelector('.score'),
     bunnies: [],
     map: {
       el: document.querySelector('.map'),
@@ -658,6 +664,7 @@ function updateScore(amount) {
     if (!sadBunnyCount) {
       elements.endMessage.classList.remove('d-none')
       elements.indicator.classList.add('happy')
+      updateScore(10);
     }
   }
 
