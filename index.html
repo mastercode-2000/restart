@@ -485,6 +485,12 @@ a:hover { text-decoration: underline; }
 <script>
     function init() {  
 
+        let score = 0;
+function updateScore(amount) {
+  score += amount;
+  elements.score.textContent = `Score: ${score}`;
+}
+        
   const elements = {
     wrapper: document.querySelector('.wrapper'),
     mapCover: document.querySelector('.map-cover'), 
